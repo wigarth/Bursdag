@@ -1,0 +1,41 @@
+name: Generate bursdag HTML
+
+on:
+  schedule:
+    # Kjører hver dag kl 23:00 UTC (ca. 00–01 norsk tid)
+    - cron: '0 23 * * *'
+  workflow_dispatch: {}  # gjør at du kan kjøre manuelt for test
+
+permissions:
+  contents: write  # nødvendig for å oppdatere index.html
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install openpyxl
+
+      - name: Generate bursdag HTML
+        run: python generate_bursdag_html.py
+
+      - name: Commit and push if changes detected
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add index.html
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Auto-update bursdag HTML"
+            git push
+          fi
