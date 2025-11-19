@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="no">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>BaRe Oslo – Bursdag</title>
   <style>
     html, body {
@@ -10,36 +10,32 @@
       height: 100%;
       width: 100%;
     }
-
     body {
       font-family: Arial, sans-serif;
       color: white;
       text-align: center;
-
-      /* Bakgrunnsbilde */
-      background-image: url("Bilde.png");
-      background-size: cover;      /* fyller skjermen */
-      background-position: center; /* midtstiller */
+      background-image: url('Bilde.png');
+      background-size: cover;
+      background-position: center;
       background-repeat: no-repeat;
     }
-
     .overlay {
-      background: rgba(0,0,0,0.50); /* halvtransparent sort bakgrunn */
+      background: rgba(0, 0, 0, 0.45);
       height: 100%;
       width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      box-sizing: border-box;
+      padding: 2rem;
     }
-
     h1 {
       font-size: 4rem;
-      margin-bottom: 1rem;
+      margin: 0 0 1rem 0;
     }
-
-    .name {
-      font-size: 5rem;
+    .names {
+      font-size: 3.5rem;
       font-weight: bold;
     }
   </style>
@@ -47,7 +43,7 @@
 <body>
   <div class="overlay">
     <h1>🎉 Gratulerer med dagen! 🎉</h1>
-    <div class="name">Testperson</div>
+    <div class="names">Donald Duck - Test</div>
   </div>
 </body>
 </html>
