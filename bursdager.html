@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8">
+  <title>BaRe Oslo – Bursdag</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: white;
+      text-align: center;
+
+      /* Bakgrunnsbilde */
+      background-image: url("Bilde.png");
+      background-size: cover;      /* fyller skjermen */
+      background-position: center; /* midtstiller */
+      background-repeat: no-repeat;
+    }
+
+    .overlay {
+      background: rgba(0,0,0,0.50); /* halvtransparent sort bakgrunn */
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+    }
+
+    .name {
+      font-size: 5rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay">
+    <h1>🎉 Gratulerer med dagen! 🎉</h1>
+    <div class="name">Testperson</div>
+  </div>
+</body>
+</html>
